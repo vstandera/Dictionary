@@ -52,6 +52,7 @@ public class SentenceController {
 
     @ApiOperation(value = "Generate sentence from random stored words in order NOUN,VERB,ADJECTIVE.")
     @PostMapping("/sentences/generate")
+    @RolesAllowed("ADMIN")
     public ResponseEntity<SentenceDto> generateSentence() {
         try {
             return new ResponseEntity<>(sentenceService.generateSentence(), HttpStatus.CREATED);

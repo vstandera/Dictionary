@@ -25,8 +25,6 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/sentences/generate").hasRole("ADMIN")
-                .antMatchers("/sentences/{sentenceID}").hasRole("ADMIN")
                 .antMatchers("/sentences/**").authenticated()
                 .antMatchers("/words/**").authenticated()
                 .and()
