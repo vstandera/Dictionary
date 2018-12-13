@@ -18,12 +18,7 @@ public class SentenceUtil {
      * @return
      */
     public static String constructSentence(Sentence sentence) {
-        if (sentence.getWords().size() != Sentence.DEFINE_NUMBER_WORDS) {
-            throw new RuntimeException("There is not valid number of words.");
-        }
-        final List<Word> words = sentence.getWords();
-        // Sort words NOUN VERB ADJECTIVE
-        Collections.sort(words);
+        final List<Word> words = getWords(sentence);
         return "" + words.get(Sentence.NOUN_NUMBER_IN_SENTENCE).getWord() + " " + words.get(Sentence.VERB_NUMBER_IN_SENTENCE).getWord()
                 + " " + words.get(Sentence.ADJECTIVE_NUMBER_IN_SENTENCE).getWord();
     }
@@ -35,13 +30,18 @@ public class SentenceUtil {
      * @return
      */
     public static String constructYodaSentence(Sentence sentence) {
+        final List<Word> words = getWords(sentence);
+        return "" + words.get(Sentence.NOUN_NUMBER_IN_SENTENCE).getWord() + " " + words.get(Sentence.ADJECTIVE_NUMBER_IN_SENTENCE).getWord()
+                + " " + words.get(Sentence.VERB_NUMBER_IN_SENTENCE).getWord();
+    }
+
+    private static List<Word> getWords(Sentence sentence) {
         if (sentence.getWords().size() != Sentence.DEFINE_NUMBER_WORDS) {
             throw new RuntimeException("There is not valid number of words.");
         }
         final List<Word> words = sentence.getWords();
         // Sort words NOUN VERB ADJECTIVE
         Collections.sort(words);
-        return "" + words.get(Sentence.NOUN_NUMBER_IN_SENTENCE).getWord() + " " + words.get(Sentence.ADJECTIVE_NUMBER_IN_SENTENCE).getWord()
-                + " " + words.get(Sentence.VERB_NUMBER_IN_SENTENCE).getWord();
+        return words;
     }
 }
