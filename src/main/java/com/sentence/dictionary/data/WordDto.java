@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @Builder
@@ -15,9 +17,8 @@ import lombok.Setter;
 /**
  * Word dto.
  */
-public class WordDto {
+public class WordDto implements Serializable {
 
     private String word;
-    @ApiParam(value = "Can only have : NOUN or VERB or ADJECTIVE")
     private String wordCategory;
 }
