@@ -39,13 +39,13 @@ public class Sentence {
     /**
      * List of words.
      */
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinColumn(name = "word_sen_id")
     private List<Word> words = new ArrayList<>();
     private LocalDateTime localDateTime;
     private int numberOfView;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "sentenceUsage_id")
     private SentenceUsage sentenceUsage;
 

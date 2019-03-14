@@ -21,8 +21,9 @@ import javax.persistence.Table;
 @Table(name="WORD")
 public class Word  implements Comparable{
 
-    @GeneratedValue
+
     @Id
+    @GeneratedValue
     private Long id;
 
     private String word;

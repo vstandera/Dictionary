@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.persistence.FetchType;
 import javax.persistence.Table;
 
 
@@ -33,7 +35,7 @@ public class SentenceUsage {
     @GeneratedValue
     private Long id;
 
-    @OneToMany(mappedBy = "sentenceUsage", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "sentenceUsage", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Sentence> sentences = new ArrayList<>();
 
     private String sentence;

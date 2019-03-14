@@ -2,6 +2,6 @@
 <configuration>
 
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <logger name="com.test.zonky" level="INFO"/>
+    <logger name="com.sentence.dictionary" level="INFO"/>
 </configuration>
 
