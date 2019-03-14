@@ -5,8 +5,6 @@ import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
 import com.sentence.dictionary.domain.Word;
 import com.sentence.dictionary.domain.enums.WordCategory;
-import com.sentence.dictionary.repositories.SentenceRepository;
-import com.sentence.dictionary.repositories.SentenceUsageRepository;
 import com.sentence.dictionary.repositories.WordRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -28,22 +26,12 @@ import static org.junit.Assert.*;
 @SpringBootTest
 @Transactional
 public class SentenceServiceImplIntTest {
+
     @Autowired
     WordRepository wordRepository;
 
     @Autowired
     SentenceService sentenceService;
-
-    @Autowired
-    WordService wordService;
-
-    @Autowired
-    SentenceRepository sentenceRepository;
-
-    @Autowired
-    SentenceUsageRepository sentenceUsageRepository;
-
-    private static boolean setUpIsDone = false;
 
     @Before
     public void setUp() throws Exception {
@@ -53,7 +41,6 @@ public class SentenceServiceImplIntTest {
         wordRepository.save(word);
         wordRepository.save(word1);
         wordRepository.save(word2);
-        setUpIsDone=true;
         sentenceService.generateSentence();
     }
 
