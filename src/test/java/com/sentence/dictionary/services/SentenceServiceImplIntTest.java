@@ -21,6 +21,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.hamcrest.Matchers.is;
 
 import static org.junit.Assert.*;
+
 @RunWith(SpringRunner.class)
 @ActiveProfiles("h2")
 @SpringBootTest
