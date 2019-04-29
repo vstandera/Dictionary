@@ -11,7 +11,7 @@ import org.apache.logging.log4j.Logger;
 public class WordMessageListener {
 
     private static final Logger log = LogManager.getLogger(WordMessageListener.class);
-    WordService wordService;
+    private WordService wordService;
 
     public WordMessageListener(WordService wordService) {
         this.wordService = wordService;
@@ -19,7 +19,6 @@ public class WordMessageListener {
 
     public void receiveMessage(WordDto wordDto){
         log.info("Input message to WordListener {}", wordDto);
-        System.out.println("Input message to WordListener");
         wordService.saveWord(wordDto);
     }
 }

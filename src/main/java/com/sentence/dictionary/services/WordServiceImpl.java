@@ -16,9 +16,9 @@ import java.util.stream.StreamSupport;
 @Service
 public class WordServiceImpl implements WordService {
 
-    WordRepository wordRepository;
-    WordToWordDto wordToWordDto;
-    WordDtoToWord wordDtoToWord;
+    private WordRepository wordRepository;
+    private WordToWordDto wordToWordDto;
+    private WordDtoToWord wordDtoToWord;
 
 
     public WordServiceImpl(WordRepository wordRepository, WordToWordDto wordToWordDto, WordDtoToWord wordDtoToWord) {

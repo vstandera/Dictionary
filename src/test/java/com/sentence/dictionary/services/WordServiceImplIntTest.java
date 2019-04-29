@@ -25,10 +25,10 @@ import static org.hamcrest.Matchers.is;
 public class WordServiceImplIntTest {
 
     @Autowired
-    WordRepository wordRepository;
+    private WordRepository wordRepository;
 
     @Autowired
-    WordService wordService;
+    private WordService wordService;
 
 
     @Test

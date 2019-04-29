@@ -11,6 +11,8 @@ import com.sentence.dictionary.domain.Sentence;
 import com.sentence.dictionary.domain.SentenceUsage;
 import com.sentence.dictionary.domain.Word;
 import com.sentence.dictionary.domain.enums.WordCategory;
+import com.sentence.dictionary.exceptions.NotEnoughWordsException;
+import com.sentence.dictionary.exceptions.SentenceDoesNotExist;
 import com.sentence.dictionary.repositories.SentenceRepository;
 import com.sentence.dictionary.repositories.SentenceUsageRepository;
 import com.sentence.dictionary.repositories.WordRepository;
@@ -32,12 +34,12 @@ import java.util.stream.StreamSupport;
 public class SentenceServiceImpl implements SentenceService {
 
 
-    SentenceRepository sentenceRepository;
-    WordRepository wordRepository;
-    SentenceToSentenceDto sentenceToSentenceDto;
-    SentenceUsageRepository sentenceUsageRepository;
-    SentenceToSentenceShortDto sentenceToSentenceShortDto;
-    SentenceToYodaSentenceDto sentenceToYodaSentenceDto;
+    private SentenceRepository sentenceRepository;
+    private WordRepository wordRepository;
+    private SentenceToSentenceDto sentenceToSentenceDto;
+    private SentenceUsageRepository sentenceUsageRepository;
+    private SentenceToSentenceShortDto sentenceToSentenceShortDto;
+    private SentenceToYodaSentenceDto sentenceToYodaSentenceDto;
 
     public SentenceServiceImpl(SentenceRepository sentenceRepository, WordRepository wordRepository,
                                SentenceToSentenceDto sentenceToSentenceDto, SentenceUsageRepository sentenceUsageRepository,
@@ -69,7 +71,7 @@ public class SentenceServiceImpl implements SentenceService {
         final List<Word> adjectiveWords = words.stream().filter(word -> word.getWordCategory().equals(WordCategory.ADJECTIVE)).collect(Collectors.toList());
 
         if (nounWords.size() == 0 || verbWords.size() == 0 || adjectiveWords.size() == 0) {
-            throw new RuntimeException("There si not enough words to make sentence.");
+            throw new NotEnoughWordsException("There si not enough words to make sentence.");
         }
 
         final Sentence sentence = initSentence(nounWords, verbWords, adjectiveWords);
@@ -92,7 +94,7 @@ public class SentenceServiceImpl implements SentenceService {
             sentence.setNumberOfView(sentence.getNumberOfView() + 1);
             return sentenceToSentenceShortDto.convert(sentenceRepository.save(sentence));
         } else {
-            throw new RuntimeException("Sentence by Id was not found.");
+            throw new SentenceDoesNotExist("Sentence by Id was not found.");
         }
     }
 
@@ -108,7 +110,7 @@ public class SentenceServiceImpl implements SentenceService {
         if (sentence.isPresent()) {
             return sentenceToYodaSentenceDto.convert(sentence.get());
         } else {
-            throw new RuntimeException("Sentence by Id was not found.");
+            throw new SentenceDoesNotExist("Sentence by Id was not found.");
         }
     }
 
@@ -142,7 +144,7 @@ public class SentenceServiceImpl implements SentenceService {
         Random rand = new Random();
         int nounRandomWord = rand.nextInt(nounWords.size());
         final Sentence sentence = new Sentence();
-        List<Word> wordsToSentence = new ArrayList();
+        List<Word> wordsToSentence = new ArrayList<>();
         wordsToSentence.add(nounWords.get(nounRandomWord));
         int verbRandomWord = rand.nextInt(verbWords.size());
         wordsToSentence.add(verbWords.get(verbRandomWord));

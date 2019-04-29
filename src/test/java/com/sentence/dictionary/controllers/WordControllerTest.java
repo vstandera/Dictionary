@@ -20,7 +20,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -29,19 +29,19 @@ import static org.mockito.Mockito.*;
 
 public class WordControllerTest {
 
-    WordController wordController;
+    private WordController wordController;
     @Mock
-    WordService wordService;
+    private WordService wordService;
 
-    MockMvc mockMvc;
+    private MockMvc mockMvc;
 
-    public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(),
+    private static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(),
             MediaType.APPLICATION_JSON.getSubtype(),
             Charset.forName("utf8")
     );
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
 
         wordController = new WordController(wordService);
@@ -62,7 +62,7 @@ public class WordControllerTest {
     public void saveWord() throws Exception {
         when(wordService.saveWord(any())).thenReturn(getWordDto());
 
-        mockMvc.perform(put("/words/Pavla").contentType(MediaType.APPLICATION_JSON).content("{\n" +
+        mockMvc.perform(post("/words/Pavla").contentType(MediaType.APPLICATION_JSON).content("{\n" +
                 "        \"wordCategory\": \"NOUN\"\n" +
                 "    }")).andExpect(status().isCreated()).andExpect(content().contentType(APPLICATION_JSON_UTF8))
                 .andExpect(jsonPath("$.word", is("Pavla")));

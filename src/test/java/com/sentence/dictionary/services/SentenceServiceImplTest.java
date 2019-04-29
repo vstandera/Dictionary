@@ -32,25 +32,25 @@ public class SentenceServiceImplTest {
     SentenceService sentenceService;
 
     @Mock
-    SentenceRepository sentenceRepository;
+    private SentenceRepository sentenceRepository;
 
     @Mock
-    WordRepository wordRepository;
+    private WordRepository wordRepository;
 
     @Mock
-    SentenceUsageRepository sentenceUsageRepository;
+    private SentenceUsageRepository sentenceUsageRepository;
 
     @Mock
-    SentenceToSentenceDto sentenceToSentenceDto;
+    private SentenceToSentenceDto sentenceToSentenceDto;
 
     @Mock
-    SentenceToSentenceShortDto sentenceToSentenceShortDto;
+    private SentenceToSentenceShortDto sentenceToSentenceShortDto;
 
     @Mock
-    SentenceToYodaSentenceDto sentenceToYodaSentenceDto;
+    private SentenceToYodaSentenceDto sentenceToYodaSentenceDto;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         MockitoAnnotations.initMocks(this);
         sentenceService = new SentenceServiceImpl(sentenceRepository, wordRepository, sentenceToSentenceDto, sentenceUsageRepository, sentenceToSentenceShortDto, sentenceToYodaSentenceDto);
     }

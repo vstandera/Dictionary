@@ -3,14 +3,13 @@ package com.sentence.dictionary.controllers;
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
+import com.sentence.dictionary.exceptions.NotEnoughWordsException;
+import com.sentence.dictionary.exceptions.SentenceDoesNotExist;
 import com.sentence.dictionary.services.SentenceService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.context.annotation.Role;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,7 +24,7 @@ import java.util.List;
 @Api(description = "This is a controller for handle Sentences.")
 public class SentenceController {
 
-    SentenceService sentenceService;
+    private SentenceService sentenceService;
 
     public SentenceController(SentenceService sentenceService) {
         this.sentenceService = sentenceService;
@@ -36,11 +35,6 @@ public class SentenceController {
     public ResponseEntity<List<SentenceDto>> getAllSentences() {
         try {
             return new ResponseEntity<>(sentenceService.getAllSentences(), HttpStatus.ACCEPTED);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-            MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
-            value.add("error", e.getMessage());
-            return new ResponseEntity<>(value, HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (Exception e) {
             e.printStackTrace();
             MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
@@ -56,7 +50,7 @@ public class SentenceController {
     public ResponseEntity<SentenceDto> generateSentence() {
         try {
             return new ResponseEntity<>(sentenceService.generateSentence(), HttpStatus.CREATED);
-        } catch (RuntimeException e) {
+        } catch (NotEnoughWordsException e) {
             e.printStackTrace();
             MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
             value.add("error", e.getMessage());
@@ -75,10 +69,10 @@ public class SentenceController {
     public ResponseEntity<SentenceShortDto> getSentence(@PathVariable(name = "sentenceID") Long id) {
         try {
             return new ResponseEntity<>(sentenceService.getSentence(id), HttpStatus.ACCEPTED);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
+        } catch (SentenceDoesNotExist wordException) {
+            wordException.printStackTrace();
             MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
-            value.add("error", e.getMessage());
+            value.add("error", wordException.getMessage());
             return new ResponseEntity<>(value, HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (Exception e) {
             e.printStackTrace();
@@ -93,10 +87,10 @@ public class SentenceController {
     public ResponseEntity<SentenceShortYodaDto> getYodaSentence(@PathVariable(name = "sentenceID") Long id) {
         try {
             return new ResponseEntity<>(sentenceService.getYodaSentence(id), HttpStatus.ACCEPTED);
-        } catch (RuntimeException e) {
-            e.printStackTrace();
+        } catch (SentenceDoesNotExist wordException) {
+            wordException.printStackTrace();
             MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
-            value.add("error", e.getMessage());
+            value.add("error", wordException.getMessage());
             return new ResponseEntity<>(value, HttpStatus.INTERNAL_SERVER_ERROR);
         } catch (Exception e) {
             e.printStackTrace();

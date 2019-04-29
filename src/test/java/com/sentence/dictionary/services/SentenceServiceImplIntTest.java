@@ -29,13 +29,13 @@ import static org.junit.Assert.*;
 public class SentenceServiceImplIntTest {
 
     @Autowired
-    WordRepository wordRepository;
+    private WordRepository wordRepository;
 
     @Autowired
-    SentenceService sentenceService;
+    private SentenceService sentenceService;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         Word word = Word.builder().word("Pavla").wordCategory(WordCategory.NOUN).build();
         Word word1 = Word.builder().word("je").wordCategory(WordCategory.VERB).build();
         Word word2 = Word.builder().word("hodna").wordCategory(WordCategory.ADJECTIVE).build();

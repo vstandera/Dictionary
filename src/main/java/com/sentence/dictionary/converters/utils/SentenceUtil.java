@@ -2,6 +2,7 @@ package com.sentence.dictionary.converters.utils;
 
 import com.sentence.dictionary.domain.Sentence;
 import com.sentence.dictionary.domain.Word;
+import com.sentence.dictionary.exceptions.NotEnoughWordsException;
 
 import java.util.Collections;
 import java.util.List;
@@ -37,7 +38,7 @@ public class SentenceUtil {
 
     private static List<Word> getWords(Sentence sentence) {
         if (sentence.getWords().size() != Sentence.DEFINE_NUMBER_WORDS) {
-            throw new RuntimeException("There is not valid number of words.");
+            throw new NotEnoughWordsException("There is not valid number of words.");
         }
         final List<Word> words = sentence.getWords();
         // Sort words NOUN VERB ADJECTIVE
