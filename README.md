@@ -34,4 +34,13 @@ docker rm di-mysql
 ##### Remove image (must stop and remove container first)
 ``
 docker rmi mysql:latest
+
+
+mvn clean install -Dmaven.test.skip=true
+
+docker build -t dictionary:latest C:\Repository\DictionaryREPOLast
+
+docker run --name dictionaryapp -p 8080:8080 --link di-mysql:mysql dictionary
+
+mvn package -DskipTests docker:build 
 ``
