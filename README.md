@@ -43,4 +43,13 @@ docker build -t dictionary:latest C:\Repository\DictionaryREPOLast
 docker run --name dictionaryapp -p 8080:8080 --link di-mysql:mysql dictionary
 
 mvn package -DskipTests docker:build 
+
+docker commit di-mysql di-mysql-data
+tag 71e8efa827ed vstandera/main_repo:dictionaryapp
+push vstandera/main_repo:dictionaryapp
+
+// docker-compose 
+docker-compose build
+docker-compose up -d
+docker-compose stop
 ``
