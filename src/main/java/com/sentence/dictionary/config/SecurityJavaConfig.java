@@ -36,6 +36,7 @@ public class SecurityJavaConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/sentences/**").authenticated()
                 .antMatchers("/words/**").authenticated()
+                .antMatchers("/actuator/**").hasRole("ADMIN")
                 .and()
                 .httpBasic();
     }
