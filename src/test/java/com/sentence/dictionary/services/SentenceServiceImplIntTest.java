@@ -1,8 +1,10 @@
 package com.sentence.dictionary.services;
 
+import com.sentence.dictionary.converters.WordToWordDto;
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
+import com.sentence.dictionary.data.WordDto;
 import com.sentence.dictionary.domain.Word;
 import com.sentence.dictionary.domain.enums.WordCategory;
 import com.sentence.dictionary.repositories.WordRepository;
@@ -48,7 +50,8 @@ public class SentenceServiceImplIntTest {
     @Test
     public void getAllSentences() {
         final List<SentenceDto> allSentences = sentenceService.getAllSentences();
-        final List<Word> words1 = allSentences.get(0).getWords();
+        final List<WordDto> words1 = allSentences.get(0).getWords();
+
         assertThat(allSentences, hasSize(1));
         assertThat(words1,hasSize(3));
         assertThat(words1.get(0).getWordCategory(),is(WordCategory.NOUN));
@@ -62,7 +65,7 @@ public class SentenceServiceImplIntTest {
     @Test
     public void generateSentence() {
         final List<SentenceDto> allSentences = sentenceService.getAllSentences();
-        final List<Word> words1 = allSentences.get(0).getWords();
+        final List<WordDto> words1 = allSentences.get(0).getWords();
         assertThat(allSentences, hasSize(1));
         assertThat(words1,hasSize(3));
         assertThat(words1.get(0).getWordCategory(),is(WordCategory.NOUN));

@@ -63,3 +63,5 @@ docker exec -it dictionary_dictionary-spring-boot-webapp_1  /bin/bash
 docker cp dictionary_dictionary-spring-boot-webapp_1:/logs/dictionary.log logs.log
 
 
+Swagger-ui
+address = http://localhost:8080/swagger-ui.html

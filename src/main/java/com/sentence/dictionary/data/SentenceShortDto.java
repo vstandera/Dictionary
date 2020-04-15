@@ -1,11 +1,7 @@
 package com.sentence.dictionary.data;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 
 /**
@@ -16,6 +12,7 @@ import lombok.Setter;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class SentenceShortDto {
 
     private EmbeddedSentence sentence;

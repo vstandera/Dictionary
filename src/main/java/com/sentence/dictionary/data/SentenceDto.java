@@ -1,11 +1,7 @@
 package com.sentence.dictionary.data;
 
 import com.sentence.dictionary.domain.Word;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -20,10 +16,11 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class SentenceDto{
     private Long id;
 
-    private List<Word> words = new ArrayList<>();
+    private List<WordDto> words = new ArrayList<>();
     private LocalDateTime localDateTime;
     private int numberOfView;
     private List<Long> ids= new ArrayList<>();

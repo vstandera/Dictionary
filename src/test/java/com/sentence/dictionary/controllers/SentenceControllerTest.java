@@ -1,8 +1,10 @@
 package com.sentence.dictionary.controllers;
 
+import com.sentence.dictionary.converters.WordToWordDto;
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
+import com.sentence.dictionary.data.WordDto;
 import com.sentence.dictionary.domain.Word;
 import com.sentence.dictionary.domain.enums.WordCategory;
 import com.sentence.dictionary.services.SentenceService;
@@ -19,6 +21,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.Mockito.*;
@@ -74,6 +77,7 @@ public class SentenceControllerTest {
     }
 
     private SentenceDto getSentenceDto() {
+        WordToWordDto wordToWordDto = new WordToWordDto();
         Word word = Word.builder().id(1L).word("Pavla").wordCategory(WordCategory.NOUN).build();
         Word word1 = Word.builder().id(2L).word("je").wordCategory(WordCategory.VERB).build();
         Word word2 = Word.builder().id(3L).word("hodna").wordCategory(WordCategory.ADJECTIVE).build();
@@ -82,7 +86,8 @@ public class SentenceControllerTest {
         words.add(word);
         words.add(word1);
         words.add(word2);
-        return SentenceDto.builder().id(22L).numberOfView(2).localDateTime(LocalDateTime.now()).words(words).ids(Collections.singletonList(1L)).sentenceUsageCount(1).build();
+        List<WordDto> wordsDto = words.stream().map(wordS -> wordToWordDto.convert(wordS)).collect(Collectors.toList());
+        return SentenceDto.builder().id(22L).numberOfView(2).localDateTime(LocalDateTime.now()).words(wordsDto).ids(Collections.singletonList(1L)).sentenceUsageCount(1).build();
     }
 
     private SentenceShortDto getSentenceShortDto() {

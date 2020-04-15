@@ -1,5 +1,6 @@
 package com.sentence.dictionary.controllers;
 
+import com.sentence.dictionary.aspect.Loggable;
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
@@ -32,6 +33,7 @@ public class SentenceController {
 
     @ApiOperation(value = "Get all sentences from database.")
     @GetMapping("/sentences")
+    @Loggable
     public ResponseEntity<List<SentenceDto>> getAllSentences() {
         try {
             return new ResponseEntity<>(sentenceService.getAllSentences(), HttpStatus.ACCEPTED);
@@ -47,6 +49,7 @@ public class SentenceController {
     @ApiOperation(value = "Generate sentence from random stored words in order NOUN,VERB,ADJECTIVE.")
     @PostMapping("/sentences/generate")
     @RolesAllowed("ADMIN")
+    @Loggable
     public ResponseEntity<SentenceDto> generateSentence() {
         try {
             return new ResponseEntity<>(sentenceService.generateSentence(), HttpStatus.CREATED);
