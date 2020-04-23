@@ -2,7 +2,6 @@ package com.sentence.dictionary.converters;
 
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.domain.Sentence;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
@@ -11,9 +10,12 @@ import java.util.stream.Collectors;
 @Component
 public class SentenceToSentenceDto implements Converter<Sentence, SentenceDto> {
 
-    @Autowired
-    WordToWordDto wordToWordDto;
 
+    private WordToWordDto wordToWordDto;
+
+    public SentenceToSentenceDto(WordToWordDto wordToWordDto) {
+        this.wordToWordDto = wordToWordDto;
+    }
 
     @Override
     public SentenceDto convert(Sentence sentence) {

@@ -16,6 +16,7 @@ import com.sentence.dictionary.exceptions.SentenceDoesNotExist;
 import com.sentence.dictionary.repositories.SentenceRepository;
 import com.sentence.dictionary.repositories.SentenceUsageRepository;
 import com.sentence.dictionary.repositories.WordRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

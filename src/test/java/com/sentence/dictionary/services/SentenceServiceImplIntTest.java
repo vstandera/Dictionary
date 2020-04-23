@@ -1,6 +1,5 @@
 package com.sentence.dictionary.services;
 
-import com.sentence.dictionary.converters.WordToWordDto;
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
@@ -54,11 +53,11 @@ public class SentenceServiceImplIntTest {
 
         assertThat(allSentences, hasSize(1));
         assertThat(words1,hasSize(3));
-        assertThat(words1.get(0).getWordCategory(),is(WordCategory.NOUN));
+        assertThat(words1.get(0).getWordCategory(),is(WordCategory.NOUN.name()));
         assertThat(words1.get(0).getWord(), is("Pavla"));
-        assertThat(words1.get(1).getWordCategory(),is(WordCategory.VERB));
+        assertThat(words1.get(1).getWordCategory(),is(WordCategory.VERB.name()));
         assertThat(words1.get(1).getWord(), is("je"));
-        assertThat(words1.get(2).getWordCategory(),is(WordCategory.ADJECTIVE));
+        assertThat(words1.get(2).getWordCategory(),is(WordCategory.ADJECTIVE.name()));
         assertThat(words1.get(2).getWord(), is("hodna"));
     }
 
@@ -68,11 +67,11 @@ public class SentenceServiceImplIntTest {
         final List<WordDto> words1 = allSentences.get(0).getWords();
         assertThat(allSentences, hasSize(1));
         assertThat(words1,hasSize(3));
-        assertThat(words1.get(0).getWordCategory(),is(WordCategory.NOUN));
+        assertThat(words1.get(0).getWordCategory(),is(WordCategory.NOUN.name()));
         assertThat(words1.get(0).getWord(), is("Pavla"));
-        assertThat(words1.get(1).getWordCategory(),is(WordCategory.VERB));
+        assertThat(words1.get(1).getWordCategory(),is(WordCategory.VERB.name()));
         assertThat(words1.get(1).getWord(), is("je"));
-        assertThat(words1.get(2).getWordCategory(),is(WordCategory.ADJECTIVE));
+        assertThat(words1.get(2).getWordCategory(),is(WordCategory.ADJECTIVE.name()));
         assertThat(words1.get(2).getWord(), is("hodna"));
         assertThat(allSentences.get(0).getNumberOfView(), is(0));
         assertThat(allSentences.get(0).getSentenceUsageCount(), is(1));

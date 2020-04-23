@@ -3,6 +3,7 @@ package com.sentence.dictionary.services;
 import com.sentence.dictionary.converters.SentenceToSentenceDto;
 import com.sentence.dictionary.converters.SentenceToSentenceShortDto;
 import com.sentence.dictionary.converters.SentenceToYodaSentenceDto;
+import com.sentence.dictionary.converters.WordToWordDto;
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
@@ -61,8 +62,10 @@ public class SentenceServiceImplTest {
         when(wordRepository.findAll()).thenReturn(getListWords());
         when(sentenceRepository.save(any())).thenReturn(getSavedSentence());
         when(sentenceUsageRepository.save(any())).thenReturn(getSentenceUsage());
-        when(sentenceToSentenceDto.convert(any())).thenCallRealMethod();
-
+        WordToWordDto wordToWordDto = new WordToWordDto();
+        SentenceToSentenceDto sentenceToSentenceDto = new SentenceToSentenceDto(wordToWordDto);
+        sentenceToSentenceDto.convert(getSavedSentence());
+        when(this.sentenceToSentenceDto.convert(any())).thenReturn(sentenceToSentenceDto.convert(getSavedSentence()));
         SentenceDto sen = sentenceService.generateSentence();
         assertEquals(sen.getWords().size(), getListWords().size());
         assertEquals(sen.getWords().get(1).getWord(), getListWords().get(1).getWord());

@@ -15,12 +15,11 @@ import javax.persistence.Table;
 @Entity
 @Getter
 @Setter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name="WORD")
-public class Word  implements Comparable{
-
+@Builder
+public class Word extends BaseEntity implements Comparable<Word>{
 
     @Id
     @GeneratedValue
@@ -30,10 +29,9 @@ public class Word  implements Comparable{
     private WordCategory wordCategory;
 
     @Override
-    public int compareTo(Object o) {
-       Word WordObject =(Word) o;
+    public int compareTo(Word word) {
         int response=0;
-        switch (WordObject.getWordCategory()) {
+        switch (word.getWordCategory()) {
             case NOUN:
                 response = 1;
                 break;

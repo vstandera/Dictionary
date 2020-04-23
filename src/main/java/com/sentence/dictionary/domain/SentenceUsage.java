@@ -29,15 +29,15 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Table(name="SENTENCE_USAGE")
-public class SentenceUsage {
-
+public class SentenceUsage extends BaseEntity{
     @Id
     @GeneratedValue
     private Long id;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "sentenceUsage", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Sentence> sentences = new ArrayList<>();
+    private List<Sentence> sentences = new ArrayList();
 
     private String sentence;
+
 
 }
