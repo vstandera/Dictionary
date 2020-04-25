@@ -39,10 +39,8 @@ public class SentenceControllerTest {
     @Mock
     private SentenceService sentenceService;
 
-    public static final MediaType APPLICATION_JSON_UTF8 = new MediaType(MediaType.APPLICATION_JSON.getType(),
-            MediaType.APPLICATION_JSON.getSubtype(),
-            Charset.forName("utf8")
-    );
+    private static final MediaType APPLICATION_JSON_UTF8 = MediaType.APPLICATION_JSON;
+
 
 
     @Before
@@ -86,7 +84,7 @@ public class SentenceControllerTest {
         words.add(word);
         words.add(word1);
         words.add(word2);
-        List<WordDto> wordsDto = words.stream().map(wordS -> wordToWordDto.convert(wordS)).collect(Collectors.toList());
+        List<WordDto> wordsDto = words.stream().map(wordToWordDto::convert).collect(Collectors.toList());
         return SentenceDto.builder().id(22L).numberOfView(2).localDateTime(LocalDateTime.now()).words(wordsDto).ids(Collections.singletonList(1L)).sentenceUsageCount(1).build();
     }
 

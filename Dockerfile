@@ -1,4 +1,4 @@
-FROM java:8
+FROM openjdk:11
 WORKDIR /
 ADD target/dictionary-0.0.1-SNAPSHOT.jar //
 EXPOSE 8080
