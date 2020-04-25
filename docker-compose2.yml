@@ -1,5 +1,23 @@
-rabbitmq:
-  image: rabbitmq:management
-  ports:
-    - "5672:5672"
-    - "15672:15672"
+version: "3"
+services:
+  di-mysql:
+    image: mysql:latest
+    ports:
+      - 6604:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=dictionnarydb
+      - MYSQL_USER=vasekuser
+      - MYSQL_PASSWORD=vasekpass
+  rabbitmq2:
+    image: rabbitmq:management
+    ports:
+      - 5672:5672
+      - 15672:15672
+  spring-boot-webapp:
+    image: vstandera/main_repo:dictionary-mysql2
+    ports:
+      - 8080:8080
+    depends_on:
+      - di-mysql
+      - rabbitmq2

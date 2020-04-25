@@ -1,7 +1,7 @@
-version: "2.2"
+version: "3"
 services:
   di-mysql:
-    image: mysql:latest
+    image: vstandera/main_repo:dictionary_di-mysql
     ports:
       - 6604:3306
     environment:
@@ -10,12 +10,12 @@ services:
       - MYSQL_USER=vasekuser
       - MYSQL_PASSWORD=vasekpass
   rabbitmq2:
-    image: rabbitmq:management
+    image: vstandera/main_repo:dictionary_rabbitmq2
     ports:
       - 5672:5672
       - 15672:15672
-  dictionary-spring-boot-webapp:
-    image: dictionary-mysql2
+  spring-boot-webapp:
+    image: vstandera/main_repo:dictionary-mysql2
     ports:
       - 8080:8080
     depends_on:

@@ -109,7 +109,7 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.2</version>
                 <configuration>
-                    <imageName>dictionary-${di-profile}</imageName>
+                    <imageName>vstandera/main_repo:dictionary-${di-profile}</imageName>
                     <baseImage>openjdk:11</baseImage>
                     <entryPoint>["java", "-Dspring.profiles.active=${di-profile}", "-jar", "/${project.build.finalName}.jar"]</entryPoint>
                     <resources>

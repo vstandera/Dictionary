@@ -62,6 +62,8 @@ docker exec -it dictionary_dictionary-spring-boot-webapp_1  /bin/bash
 
 docker cp dictionary_dictionary-spring-boot-webapp_1:/logs/dictionary.log logs.log
 
+docker commit 4fcf8b55041aaaaa vstandera/main_repo:dictionary-mysql2
+docker push vstandera/main_repo:dictionary-mysql2
 
 Swagger-ui
 address = http://localhost:8080/swagger-ui.html
