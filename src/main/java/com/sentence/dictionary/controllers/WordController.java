@@ -5,6 +5,8 @@ import com.sentence.dictionary.exceptions.WordCategoryException;
 import com.sentence.dictionary.services.WordService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -17,7 +19,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@Api(description = "This is controller for handle Words.")
+@Api(value = "Dictionary sentences", tags = {
+        "Word1" })
+@SwaggerDefinition(tags = { @Tag(name = "Word1", description = "This is controller for handle Words.") })
 @RestController
 public class WordController {
 

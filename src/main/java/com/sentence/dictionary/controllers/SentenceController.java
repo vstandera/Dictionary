@@ -9,6 +9,8 @@ import com.sentence.dictionary.exceptions.SentenceDoesNotExist;
 import com.sentence.dictionary.services.SentenceService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.SwaggerDefinition;
+import io.swagger.annotations.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
@@ -22,7 +24,9 @@ import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
-@Api(description = "This is a controller for handle Sentences.")
+@Api(value = "Dictionary sentences", tags = {
+        "Sententence1" })
+@SwaggerDefinition(tags = { @Tag(name = "Sententence1", description = "This is a controller for handle Sentences.") })
 public class SentenceController {
 
     private SentenceService sentenceService;

@@ -1,5 +1,17 @@
 "# Dictionary" 
 
+How to start the application:
+
+1. Download https://www.docker.com/products/docker-desktop and install.
+2. Download the docker-compose.yml and start docker-desktop.
+3. run on your console command: docker-compose up
+where you have downloaded the docker-compose.yml.
+4. If are started docker-compose up the first time the mysql database may not be started in time. Quick fix 
+Stop "Ctr + C" and start again "docker-compose up"
+5. Download and install the Postman app https://www.postman.com/downloads/
+6. Import to Postman project Dictionary.postman_collection2.json
+7. All services are documented by swagger2 on address: http://localhost:8080/swagger-ui.html
+
 #### Docker Commands
 ##### Start MySql Container (downloads image if not found)
 ``
