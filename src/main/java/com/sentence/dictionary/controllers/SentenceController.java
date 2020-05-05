@@ -1,6 +1,7 @@
 package com.sentence.dictionary.controllers;
 
 import com.sentence.dictionary.aspect.Loggable;
+import com.sentence.dictionary.data.AuthenticationBean;
 import com.sentence.dictionary.data.SentenceDto;
 import com.sentence.dictionary.data.SentenceShortDto;
 import com.sentence.dictionary.data.SentenceShortYodaDto;
@@ -15,15 +16,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins={ "http://localhost:3000", "http://localhost:4200" })
 @Api(value = "Dictionary sentences", tags = {
         "Sententence1" })
 @SwaggerDefinition(tags = { @Tag(name = "Sententence1", description = "This is a controller for handle Sentences.") })
@@ -48,6 +47,12 @@ public class SentenceController {
             return new ResponseEntity<>(value, HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
+    }
+
+    @GetMapping(path = "/basicauth")
+    public AuthenticationBean helloWorldBean() {
+        //throw new RuntimeException("Some Error has Happened! Contact Support at ***-***");
+        return new AuthenticationBean("You are authenticated");
     }
 
     @ApiOperation(value = "Generate sentence from random stored words in order NOUN,VERB,ADJECTIVE.")

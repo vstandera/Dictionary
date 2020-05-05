@@ -56,7 +56,7 @@ docker run --name dictionaryapp -p 8080:8080 --link di-mysql:mysql dictionary
 
 mvn package -DskipTests docker:build 
 
-docker commit di-mysql di-mysql-data
+docker commit di-mysql di-mysql-data   
 
 docker tag 71e8efa827ed vstandera/main_repo:dictionaryapp
 
@@ -76,6 +76,34 @@ docker cp dictionary_dictionary-spring-boot-webapp_1:/logs/dictionary.log logs.l
 
 docker commit 4fcf8b55041aaaaa vstandera/main_repo:dictionary-mysql2
 docker push vstandera/main_repo:dictionary-mysql2
+
+
+########## start docker for React FE #########################
+docker build -t web-dictionary:dev .
+
+
+docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 3001:3000 \
+    -e CHOKIDAR_USEPOLLING=true \
+    web-dictionary:dev
+
+docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 3000:3000 \
+    -e CHOKIDAR_USEPOLLING=true \
+    web-dictionary:dev
+    
+    
+    npm install --- install define package to node-modules and to Dictionary/web-dictionary/package.json
+    npm start --- start the app on port 3000
+############################################################### 
 
 Swagger-ui
 address = http://localhost:8080/swagger-ui.html

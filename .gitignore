@@ -25,3 +25,4 @@
 /.nb-gradle/
 
 logs/
+web-dictionary/node_modules/
