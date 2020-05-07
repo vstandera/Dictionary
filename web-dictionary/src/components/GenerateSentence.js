@@ -26,7 +26,7 @@ class GenerateSentence extends Component{
         return "Not generated yet."
     }
     render() {
-        console.log('render')
+        console.log('generate')
         return (
             <div>
             <div className="Align-center">

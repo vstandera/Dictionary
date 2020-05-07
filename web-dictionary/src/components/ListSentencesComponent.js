@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import SentencesDataService from '../service/SentencesDataService';
 
 // const INSTRUCTOR = 'in28minutes'
@@ -43,6 +44,7 @@ class ListSentencesComponent extends Component {
                                 <th>Sentence usage</th>
                                 <th>Generated time</th>
                                 <th>Number of view</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -57,6 +59,9 @@ class ListSentencesComponent extends Component {
                                             <td>{sentence.sentenceUsageCount}</td>
                                             <td>{sentence.localDateTime}</td>
                                             <td>{sentence.numberOfView}</td>
+                                            <td> <Link to={'/senDetail/'+sentence.id}>
+                                                <i className="material-icons md-24">details</i>
+                                            </Link></td>
                                         </tr>
                                 )
                             }

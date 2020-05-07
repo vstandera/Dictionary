@@ -7,6 +7,7 @@ import MenuComponent from './MenuComponent';
 import GenerateSentence from './GenerateSentence';
 import AuthenticationService from '../service/AuthenticationService';
 import AuthenticatedRoute from './AuthenticatedRoute';
+import SentenceDetail from "./SentenceDetail";
 
 class DictionaryApp extends Component {
 
@@ -23,6 +24,7 @@ class DictionaryApp extends Component {
                             <AuthenticatedRoute path="/logout" exact component={LogoutComponent} />
                             <AuthenticatedRoute path="/sentence" exact component={ListSentencesComponent} />
                             <AuthenticatedRoute path="/generate" exact component={GenerateSentence} />
+                            <AuthenticatedRoute path="/senDetail/:sentenceId" exact component={SentenceDetail} />
                         </Switch>
                     </>
                 </Router>

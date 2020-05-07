@@ -36,7 +36,6 @@ public class SentenceController {
 
     @ApiOperation(value = "Get all sentences from database.")
     @GetMapping("/sentences")
-    @Loggable
     public ResponseEntity<List<SentenceDto>> getAllSentences() {
         try {
             return new ResponseEntity<>(sentenceService.getAllSentences(), HttpStatus.ACCEPTED);
@@ -80,7 +79,7 @@ public class SentenceController {
     @GetMapping("/sentences/{sentenceID}")
     public ResponseEntity<SentenceShortDto> getSentence(@PathVariable(name = "sentenceID") Long id) {
         try {
-            return new ResponseEntity<>(sentenceService.getSentence(id), HttpStatus.ACCEPTED);
+                return new ResponseEntity<>(sentenceService.getSentence(id), HttpStatus.ACCEPTED);
         } catch (SentenceDoesNotExist wordException) {
             wordException.printStackTrace();
             MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
