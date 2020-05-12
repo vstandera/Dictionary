@@ -5,9 +5,10 @@ import LoginComponent from './LoginComponent';
 import LogoutComponent from './LogoutComponent';
 import MenuComponent from './MenuComponent';
 import GenerateSentence from './GenerateSentence';
-import AuthenticationService from '../service/AuthenticationService';
+// import AuthenticationService from '../service/AuthenticationService';
 import AuthenticatedRoute from './AuthenticatedRoute';
 import SentenceDetail from "./SentenceDetail";
+import WordForm from "./WordForm";
 
 class DictionaryApp extends Component {
 
@@ -25,6 +26,7 @@ class DictionaryApp extends Component {
                             <AuthenticatedRoute path="/sentence" exact component={ListSentencesComponent} />
                             <AuthenticatedRoute path="/generate" exact component={GenerateSentence} />
                             <AuthenticatedRoute path="/senDetail/:sentenceId" exact component={SentenceDetail} />
+                            <AuthenticatedRoute path="/wordForm" exact component={WordForm} />
                         </Switch>
                     </>
                 </Router>

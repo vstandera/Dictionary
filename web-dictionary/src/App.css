@@ -31,6 +31,7 @@
 .Align-center{
   text-align: center;
   margin-top: 30px;
+  max-width: 1100px;
 }
 
 @keyframes App-logo-spin {

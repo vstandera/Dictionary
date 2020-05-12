@@ -14,6 +14,7 @@ class MenuComponent extends Component {
                     <ul className="navbar-nav">
                         <li><Link className="nav-link" to="/sentence">Sentences</Link></li>
                         {isUserLoggedIn && <li><Link className="nav-link" to="/generate">Generate sentence</Link></li>}
+                        {isUserLoggedIn && <li><Link className="nav-link" to="/wordForm">Save word</Link></li>}
                     </ul>
                     <ul className="navbar-nav navbar-collapse justify-content-end">
                         {!isUserLoggedIn && <li><Link className="nav-link" to="/login">Login</Link></li>}

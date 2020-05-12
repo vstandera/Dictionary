@@ -11,17 +11,14 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Api(value = "Dictionary sentences", tags = {
         "Word1" })
 @SwaggerDefinition(tags = { @Tag(name = "Word1", description = "This is controller for handle Words.") })
+@CrossOrigin(origins={ "http://localhost:3000", "http://localhost:4200" })
 @RestController
 public class WordController {
 

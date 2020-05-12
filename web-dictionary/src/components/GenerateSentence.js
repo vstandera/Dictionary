@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
-import ListSentencesComponent from "./ListSentencesComponent";
 import GenerateSentenceService from "../service/GenerateSentenceService"
 
 class GenerateSentence extends Component{

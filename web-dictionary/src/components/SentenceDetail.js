@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import SentencesDetailDataService from "../service/SentencesDetailDataService";
-
+import Card from 'react-bootstrap/Card'
+import Button from 'react-bootstrap/Button';
+import {Link} from "react-router-dom";
 
 class SentenceDetail extends Component{
 
@@ -29,11 +31,18 @@ class SentenceDetail extends Component{
     render() {
         return (
             <div className="Align-center">
-                <div>
-                    <h3>Sentence Id: {this.props.match.params.sentenceId}</h3>
-                    <h4>{this.state.sentence.sentence.text}.</h4>
-                    <div>Number of view: {this.state.sentence.sentence.numberOfView}</div>
-                </div>
+
+                <Card>
+                    <Card.Header>Sentence</Card.Header>
+                    <Card.Body>
+                        <Card.Title>Generated sentene with id: {this.props.match.params.sentenceId} </Card.Title>
+                        <Card.Text>
+                            {this.state.sentence.sentence.text}.<br/>
+                            Number of view: {this.state.sentence.sentence.numberOfView}
+                        </Card.Text>
+                        <Link to="/sentence"><Button variant="primary">Go back</Button></Link>
+                    </Card.Body>
+                </Card>
             </div>
 
         )
