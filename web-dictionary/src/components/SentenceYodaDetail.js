@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import SentencesDetailDataService from "../service/SentencesDetailDataService";
+import SentencesYodaDetailDataService from "../service/SentencesYodaDetailDataService";
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import {Link} from "react-router-dom";
 
-class SentenceDetail extends Component{
+class SentenceYodaDetail extends Component{
 
     constructor(props){
     super(props)
@@ -20,7 +20,7 @@ class SentenceDetail extends Component{
 
     refreshSentence() {
         console.log('paramkey :'+ this.props.match.params.sentenceId);
-        SentencesDetailDataService.retrieveDetailSentences(this.props.match.params.sentenceId)//HARDCODED
+        SentencesYodaDetailDataService.retrieveYodaDetailSentences(this.props.match.params.sentenceId)//HARDCODED
             .then(
                 response => {
                     this.setState({ sentence: response.data })
@@ -33,12 +33,11 @@ class SentenceDetail extends Component{
             <div className="Align-center">
 
                 <Card>
-                    <Card.Header>Sentence</Card.Header>
+                    <Card.Header className="backgroundGreen"><i className="material-icons md-24">child_care</i>     Sentence Yoda </Card.Header>
                     <Card.Body>
                         <Card.Title>{this.state.sentence.sentence.text}.</Card.Title>
                         <Card.Text>
-                            Generated sentene with id: {this.props.match.params.sentenceId}<br/>
-                            Number of view: {this.state.sentence.sentence.numberOfView}
+                            Generated yoda sentene with id: {this.props.match.params.sentenceId}
                         </Card.Text>
                         <Link to="/sentence"><Button variant="primary">Go back</Button></Link>
                     </Card.Body>
@@ -49,4 +48,4 @@ class SentenceDetail extends Component{
     }
 
 }
-export default SentenceDetail
+export default SentenceYodaDetail
