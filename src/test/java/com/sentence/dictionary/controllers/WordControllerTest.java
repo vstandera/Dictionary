@@ -2,6 +2,7 @@ package com.sentence.dictionary.controllers;
 
 import com.sentence.dictionary.data.WordDto;
 import com.sentence.dictionary.domain.enums.WordCategory;
+import com.sentence.dictionary.messaging.RabbitService;
 import com.sentence.dictionary.services.WordService;
 import org.junit.Before;
 import org.junit.Test;
@@ -33,6 +34,9 @@ public class WordControllerTest {
     @Mock
     private WordService wordService;
 
+    @Mock
+    private RabbitService rabbitService;
+
     private MockMvc mockMvc;
 
     private static final MediaType APPLICATION_JSON_UTF8 = MediaType.APPLICATION_JSON;
@@ -41,7 +45,7 @@ public class WordControllerTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
 
-        wordController = new WordController(wordService);
+        wordController = new WordController(wordService, rabbitService);
         mockMvc = MockMvcBuilders.standaloneSetup(wordController).build();
     }
 
@@ -57,14 +61,12 @@ public class WordControllerTest {
 
     @Test
     public void saveWord() throws Exception {
-        when(wordService.saveWord(any())).thenReturn(getWordDto());
+//        when(rabbitService.sendMessage(any())).;
 
-        mockMvc.perform(post("/words/Pavla").contentType(MediaType.APPLICATION_JSON).content("{\n" +
+        mockMvc.perform(post("/words/Pavla").contentType(APPLICATION_JSON_UTF8).content("{\n" +
                 "        \"wordCategory\": \"NOUN\"\n" +
-                "    }")).andExpect(status().isCreated()).andExpect(content().contentType(APPLICATION_JSON_UTF8))
-                .andExpect(jsonPath("$.word", is("Pavla")));
-        verify(wordService, times(1)).saveWord(any());
-
+                "    }")).andExpect(status().isCreated()).andExpect(content().contentType("text/plain;charset=ISO-8859-1"))
+                .andExpect(content().string("Message to RabbitMQ was send."));
     }
 
     @Test

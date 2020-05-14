@@ -2,6 +2,7 @@ package com.sentence.dictionary.controllers;
 
 import com.sentence.dictionary.data.WordDto;
 import com.sentence.dictionary.exceptions.WordCategoryException;
+import com.sentence.dictionary.messaging.RabbitService;
 import com.sentence.dictionary.services.WordService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -24,8 +25,11 @@ public class WordController {
 
     private WordService wordService;
 
-    public WordController(WordService wordService) {
+    private RabbitService rabbitService;
+
+    public WordController(WordService wordService, RabbitService rabbitService) {
         this.wordService = wordService;
+        this.rabbitService = rabbitService;
     }
 
     @ApiOperation(value = "Find all words in database.")
@@ -36,9 +40,10 @@ public class WordController {
 
     @ApiOperation(value = "Save word to database.")
     @PostMapping("words/{word}")
-    public ResponseEntity<WordDto> saveWord(@PathVariable("word") String word, @RequestBody WordDto wordDto) {
+    public ResponseEntity<String> saveWord(@PathVariable("word") String word, @RequestBody WordDto wordDto) {
         try {
-            return new ResponseEntity<>(wordService.saveWord(WordDto.builder().word(word).wordCategory(wordDto.getWordCategory()).build()), HttpStatus.CREATED);
+            rabbitService.sendMessage(WordDto.builder().word(word).wordCategory(wordDto.getWordCategory()).build());
+            return new ResponseEntity("Message to RabbitMQ was send.", HttpStatus.CREATED);
         } catch (WordCategoryException wordCat) {
             wordCat.printStackTrace();
             MultiValueMap<String, String> value = new LinkedMultiValueMap<>();
