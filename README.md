@@ -6,11 +6,30 @@ How to start the application:
 2. Download the docker-compose.yml and start docker-desktop.
 3. run on your console command: docker-compose up
 where you have downloaded the docker-compose.yml.
-4. If are started docker-compose up the first time the mysql database may not be started in time. Quick fix 
+4. If the App started docker-compose up the first time the mysql database may not be started in time. Quick fix 
 Stop "Ctr + C" and start again "docker-compose up"
 5. Download and install the Postman app https://www.postman.com/downloads/
 6. Import to Postman project Dictionary.postman_collection2.json
 7. All services are documented by swagger2 on address: http://localhost:8080/swagger-ui.html
+
+8. For run the FE in React you have to clone the repo : git clone https://github.com/vstandera/Dictionary.git
+9. Download npm and install https://nodejs.org/en/download/
+10. In the direcotry /Dictionary/web-dictionary run command : "npm install"
+11. In directory /Dictionary/web-dictionary run command: "docker build -t web-dictionary:dev ."
+12. Then run command "docker run \
+                          -it \
+                          --rm \
+                          -v ${PWD}:/app \
+                          -v /app/node_modules \
+                          -p 3000:3000 \
+                          -e CHOKIDAR_USEPOLLING=true \
+                          web-dictionary:dev"
+13. The FE will be started on http://localhost:3000
+14. Login credential is 
+Login:"admin" Password:"admin"
+Login:"vasek" Password:"vasek"
+Login:"kamca" Password:"kamca"
+Login:"user" Password:"user"
 
 #### Docker Commands
 ##### Start MySql Container (downloads image if not found)
@@ -80,16 +99,6 @@ docker push vstandera/main_repo:dictionary-mysql2
 
 ########## start docker for React FE #########################
 docker build -t web-dictionary:dev .
-
-
-docker run \
-    -it \
-    --rm \
-    -v ${PWD}:/app \
-    -v /app/node_modules \
-    -p 3001:3000 \
-    -e CHOKIDAR_USEPOLLING=true \
-    web-dictionary:dev
 
 docker run \
     -it \
