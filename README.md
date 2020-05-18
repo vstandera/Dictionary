@@ -100,14 +100,14 @@ docker push vstandera/main_repo:dictionary-mysql2
 ########## start docker for React FE #########################
 docker build -t web-dictionary:dev .
 
-docker run \
+sudo docker run \
     -it \
     --rm \
     -v ${PWD}:/app \
     -v /app/node_modules \
     -p 3000:3000 \
     -e CHOKIDAR_USEPOLLING=true \
-    web-dictionary:dev
+    web-dictionary:dev \
     
     
     npm install --- install define package to node-modules and to Dictionary/web-dictionary/package.json
