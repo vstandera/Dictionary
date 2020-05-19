@@ -21,3 +21,10 @@ services:
     depends_on:
       - di-mysql
       - rabbitmq2
+  dictionaryweb-prod:
+        container_name: dictioanay-prod
+        build:
+          context: ./web-dictionary/
+          dockerfile: Dockerfile.prod
+        ports:
+          - '3000:80'
