@@ -19,7 +19,6 @@ import java.util.List;
 @Api(value = "Dictionary sentences", tags = {
         "Word1" })
 @SwaggerDefinition(tags = { @Tag(name = "Word1", description = "This is controller for handle Words.") })
-@CrossOrigin(origins={ "http://localhost:3000", "http://localhost:4200" })
 @RestController
 public class WordController {
 
@@ -33,12 +32,14 @@ public class WordController {
     }
 
     @ApiOperation(value = "Find all words in database.")
+    @CrossOrigin
     @GetMapping("/words")
     public ResponseEntity<List<WordDto>> getAllWords() {
         return new ResponseEntity<>(wordService.getAllWords(), HttpStatus.ACCEPTED);
     }
 
     @ApiOperation(value = "Save word to database.")
+    @CrossOrigin
     @PostMapping("words/{word}")
     public ResponseEntity<String> saveWord(@PathVariable("word") String word, @RequestBody WordDto wordDto) {
         try {
@@ -59,6 +60,7 @@ public class WordController {
     }
 
     @ApiOperation(value = "Get word form database by word.value.")
+    @CrossOrigin
     @GetMapping("/words/{word}")
     public ResponseEntity<WordDto> getWord(@PathVariable String word) {
         return new ResponseEntity<>(wordService.getWord(word), HttpStatus.ACCEPTED);

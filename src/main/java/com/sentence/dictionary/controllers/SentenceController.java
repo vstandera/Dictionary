@@ -22,7 +22,6 @@ import javax.annotation.security.RolesAllowed;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins={ "http://localhost:3000", "http://localhost:4200" })
 @Api(value = "Dictionary sentences", tags = {
         "Sententence1" })
 @SwaggerDefinition(tags = { @Tag(name = "Sententence1", description = "This is a controller for handle Sentences.") })
@@ -35,6 +34,7 @@ public class SentenceController {
     }
 
     @ApiOperation(value = "Get all sentences from database.")
+    @CrossOrigin
     @GetMapping("/sentences")
     public ResponseEntity<List<SentenceDto>> getAllSentences() {
         try {
@@ -49,6 +49,7 @@ public class SentenceController {
     }
 
     @GetMapping(path = "/basicauth")
+    @CrossOrigin
     public AuthenticationBean helloWorldBean() {
         //throw new RuntimeException("Some Error has Happened! Contact Support at ***-***");
         return new AuthenticationBean("You are authenticated");
@@ -56,6 +57,7 @@ public class SentenceController {
 
     @ApiOperation(value = "Generate sentence from random stored words in order NOUN,VERB,ADJECTIVE.")
     @PostMapping("/sentences/generate")
+    @CrossOrigin
     @RolesAllowed("ADMIN")
     @Loggable
     public ResponseEntity<SentenceDto> generateSentence() {
@@ -76,6 +78,7 @@ public class SentenceController {
     }
 
     @ApiOperation(value = "Get sentence from database by Id. And increase viewCount.")
+    @CrossOrigin
     @GetMapping("/sentences/{sentenceID}")
     public ResponseEntity<SentenceShortDto> getSentence(@PathVariable(name = "sentenceID") Long id) {
         try {
@@ -94,6 +97,7 @@ public class SentenceController {
     }
 
     @ApiOperation(value = "Get sentence form database. The sentence will have Yoda order words - NOUN,ADJECTIVE,VERB.")
+    @CrossOrigin
     @GetMapping("/sentences/{sentenceID}/yodaTalk")
     public ResponseEntity<SentenceShortYodaDto> getYodaSentence(@PathVariable(name = "sentenceID") Long id) {
         try {
