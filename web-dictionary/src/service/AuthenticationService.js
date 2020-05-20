@@ -42,7 +42,7 @@ class AuthenticationService {
 
 
     logout() {
-        window.location.reload();
+        // window.location.reload();
         sessionStorage.removeItem(USER_NAME_SESSION_ATTRIBUTE_NAME);
     }
 
