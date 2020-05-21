@@ -26,3 +26,6 @@
 
 logs/
 web-dictionary/node_modules/
+
+rmapp.sh
+rmweb.sh
