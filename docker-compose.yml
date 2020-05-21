@@ -16,6 +16,8 @@ services:
       - 15672:15672
   spring-boot-webapp:
     image: vstandera/main_repo:dictionary-mysql2
+    volumes:
+      - ./appLog:./logs
     ports:
       - 8080:8080
     depends_on:
@@ -26,5 +28,7 @@ services:
         build:
           context: ./web-dictionary/
           dockerfile: Dockerfile.prod
+        volumes:
+         - ./webLog:./logs
         ports:
           - '80:80'

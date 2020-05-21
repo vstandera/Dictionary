@@ -90,6 +90,7 @@ docker-compose up -d
 docker-compose stop
 
 docker exec -it dictionary_dictionary-spring-boot-webapp_1  /bin/bash
+docker exec -it dictionary_spring-boot-webapp_1  /bin/bash
 
 docker cp dictionary_dictionary-spring-boot-webapp_1:/logs/dictionary.log logs.log
 
