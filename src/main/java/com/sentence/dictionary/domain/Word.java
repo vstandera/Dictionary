@@ -30,18 +30,9 @@ public class Word extends BaseEntity implements Comparable<Word>{
 
     @Override
     public int compareTo(Word word) {
-        int response=0;
-        switch (word.getWordCategory()) {
-            case NOUN:
-                response = 1;
-                break;
-            case VERB:
-                response = 2;
-                break;
-            case ADJECTIVE:
-                response=3;
-                break;
+        if (word == null || this.wordCategory == null || word.getWordCategory() == null) {
+            return 0;
         }
-        return response;
+        return Integer.compare(this.wordCategory.ordinal(), word.getWordCategory().ordinal());
     }
 }
