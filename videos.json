@@ -1,0 +1,144 @@
+{
+    "sections": [
+    {
+      "id": "try",
+      "label": "Zkouška",
+      "icon": "✨",
+      "accent": "#ffc857",
+      "description": "Krátká ochutnávka pro první zapnutí.",
+      "items": [
+        {
+          "id": "try-1",
+          "title": "Windows 11 zrychlení",
+          "length": "10 min",
+          "level": "Začátečník",
+          "date": "2024-11-12",
+          "link": "https://youtu.be/4S8MqFG4xYU"
+        },
+        {
+          "id": "try-2",
+          "title": "MacOS zrychlení",
+          "length": "10 min",
+          "level": "Začátečník",
+          "date": "2024-11-12",
+          "link": "https://youtu.be/DUARWLcF9Os"
+        },
+        {
+          "id": "try-3",
+          "title": "Asistivní přístup iPad",
+          "length": "10 min",
+          "level": "Začátečník",
+          "date": "2024-11-12",
+          "link": "https://youtu.be/r0V34cgz5Dk"
+        }
+      ]
+    },
+    {
+      "id": "meditation",
+      "label": "Meditace",
+      "icon": "🧘",
+      "accent": "#5fd0c3",
+      "description": "Klidné vedené meditace, zaměřené na dech a všímavost.",
+      "items": [
+        {
+          "id": "med-1",
+          "title": "Hluboké uvolnění před spaním",
+          "length": "15 min",
+          "level": "Středně pokročilí",
+          "date": "2024-12-01",
+          "link": "https://youtu.be/dQw4w9WgXcQ"
+        },
+        {
+          "id": "med-2",
+          "title": "Skenování těla a uvolnění napětí",
+          "length": "18 min",
+          "level": "Začátečník",
+          "date": "2024-10-10",
+          "link": "https://youtu.be/dQw4w9WgXcQ"
+        },
+        {
+          "id": "med-3",
+          "title": "Všímavost k dechu",
+          "length": "12 min",
+          "level": "Začátečník",
+          "date": "2024-08-03",
+          "link": "https://youtu.be/dQw4w9WgXcQ"
+        }
+      ]
+    },
+    {
+      "id": "workout",
+      "label": "Cvičení",
+      "icon": "⚡️",
+      "accent": "#ef6f6c",
+      "description": "Rychlé flow pro rozhýbání těla.",
+      "items": [
+        {
+          "id": "workout-1",
+          "title": "8 minut s Kattlebellem",
+          "length": "5 min",
+          "level": "Středně pokročilí",
+          "date": "2024-11-20",
+          "link": "https://youtu.be/IgWqBi3huh0"
+        },
+        {
+          "id": "workout-2",
+          "title": "Core restart bez pomůcek 5",
+          "length": "14 min",
+          "level": "Středně pokročilí",
+          "date": "2024-10-02",
+          "link": "https://youtu.be/dQw4w9WgXcQ"
+        },
+        {
+          "id": "workout-3",
+          "title": "Kattlebell cvičení pro začátečníky",
+          "length": "4 min",
+          "level": "Začátečník",
+          "date": "2024-08-22",
+          "link": "https://youtu.be/MN3jHgHS5uA"
+        },
+        {
+          "id": "workout-4",
+          "title": "Cvičení Horstand pro začátečníky",
+          "length": "2 min",
+          "level": "Začátečník",
+          "date": "2023-12-05",
+          "link": "https://youtu.be/2cTzaEBI_wY"
+        }
+      ]
+    },
+    {
+      "id": "yoga",
+      "label": "Yoga",
+      "icon": "🌿",
+      "accent": "#7cc27c",
+      "description": "Jemné i dynamičtější sekvence na každý den.",
+      "items": [
+        {
+          "id": "yoga-1",
+          "title": "Jemná ranní hatha",
+          "length": "20 min",
+          "level": "Začátečník",
+          "date": "2024-12-05",
+          "link": "https://youtu.be/dQw4w9WgXcQ"
+        },
+        {
+          "id": "yoga-2",
+          "title": "Power yoga na povzbuzení",
+          "length": "18 min",
+          "level": "Středně pokročilí",
+          "date": "2024-10-15",
+          "link": "https://youtu.be/dQw4w9WgXcQ"
+        },
+        {
+          "id": "yoga-3",
+          "title": "Restorativní večerní praxe",
+          "length": "16 min",
+          "level": "Lehké cvičení",
+          "date": "2024-08-28",
+          "link": "https://youtu.be/dQw4w9WgXcQ"
+        }
+      ]
+    }
+    ]
+}

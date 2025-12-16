@@ -34,7 +34,7 @@ Login:"user" Password:"user"
 #### Docker Commands
 ##### Start MySql Container (downloads image if not found)
 ``
-docker run  --detach   --name di-mysql -p 6604:3306 -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=dictionnarydb -e MYSQL_USER=vasekuser -e MYSQL_PASSWORD=vasekpass -d mysql
+docker run  --detach   --name di-mysql -p 6604:3306 -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=wordpress -e MYSQL_USER=vasekuser -e MYSQL_PASSWORD=vasekpass -d mysql
 ``
 
 ##### view all images
@@ -117,3 +117,5 @@ sudo docker run \
 
 Swagger-ui
 address = http://localhost:8080/swagger-ui.html
+
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.13-management
