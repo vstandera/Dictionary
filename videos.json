@@ -104,6 +104,14 @@
           "level": "Začátečník",
           "date": "2023-12-05",
           "link": "https://youtu.be/2cTzaEBI_wY"
+        },
+  	{
+          "id": "workout-5",
+          "title": "Nove cviceni",
+          "length": "3 min",
+          "level": "Začátečník",
+          "date": "2023-12-05",
+          "link": "https://youtu.be/2cTzaEBI_wY"
         }
       ]
     },
