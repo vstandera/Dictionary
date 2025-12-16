@@ -120,6 +120,14 @@
           "level": "Začátečník",
           "date": "2023-12-05",
           "link": "https://youtu.be/2cTzaEBI_wY"
+        },
+  	{
+          "id": "workout-6",
+          "title": "Vyzva v prkně",
+          "length": "5 min",
+          "level": "Začátečník",
+          "date": "2025-12-06",
+          "link": "https://youtu.be/AlrCFw9XYoM"
         }
       ]
     },
