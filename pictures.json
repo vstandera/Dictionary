@@ -1,0 +1,108 @@
+{
+  "pictures": [
+    {
+      "id": "pic-try-1",
+      "description": "Úvodní 10min meditační reset",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-try-2",
+      "description": "Protažení po práci v sedě",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-try-3",
+      "description": "Ranní dech a nastavení dne",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-med-1",
+      "description": "Hluboké uvolnění před spaním",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-med-2",
+      "description": "Skenování těla a uvolnění napětí",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-med-3",
+      "description": "Všímavost k dechu",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-workout-1",
+      "description": "5min rozhýbání krční páteře",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-workout-2",
+      "description": "Core restart bez pomůcek",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-workout-3",
+      "description": "Kattlebell cvičení pro začátečníky",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-workout-4",
+      "description": "Cvičení Horstand pro začátečníky",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-yoga-1",
+      "description": "Jemná ranní hatha",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-yoga-2",
+      "description": "Power yoga na povzbuzení",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    },
+    {
+      "id": "pic-yoga-3",
+      "description": "Restorativní večerní praxe",
+      "picture_binary_data": {
+        "content_type": "image/png",
+        "data": "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO2X0YsAAAAASUVORK5CYII="
+      }
+    }
+  ]
+}
