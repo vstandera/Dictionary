@@ -15,17 +15,17 @@
           "categories": ["Dech", "Ráno"],
           "picture_id": "pic-try-1",
           "date": "2024-12-18",
-          "link": "https://youtu.be/4S8MqFG4xYU"
+          "link": "https://youtu.be/9lKcybTZps8?si=WCQM-PnoZJ5e0X1d"
         },
         {
           "id": "try-2",
-          "title": "Expresní protažení po práci",
+          "title": "Yoga pro podporu imunity",
           "length": "10 min",
-          "level": "Střed",
+          "level": "Střední",
           "categories": ["Celé tělo", "Bez pomůcek"],
           "picture_id": "pic-try-2",
           "date": "2024-11-30",
-          "link": "https://youtu.be/DUARWLcF9Os"
+          "link": "https://youtu.be/TjjOoU0XVWQ?si=EV3X9Fvf9E3mEo2h"
         },
         {
           "id": "try-3",
@@ -35,7 +35,7 @@
           "categories": ["Mindfulness", "Pauza"],
           "picture_id": "pic-try-3",
           "date": "2024-11-10",
-          "link": "https://youtu.be/r0V34cgz5Dk"
+          "link": "https://youtu.be/OZXtHhCSNW0?si=rq2DW-jzjDRtuJQx"
         }
       ]
     },
@@ -54,7 +54,7 @@
           "categories": ["Spánek", "Relax"],
           "picture_id": "pic-med-1",
           "date": "2024-12-01",
-          "link": "https://youtu.be/dQw4w9WgXcQ"
+          "link": "https://youtu.be/6Z1tp5TrRNE?si=Q-tLM_Eu6E9ZCY2L"
         },
         {
           "id": "med-2",
@@ -64,7 +64,7 @@
           "categories": ["Tělo", "Uvolnění"],
           "picture_id": "pic-med-2",
           "date": "2024-10-10",
-          "link": "https://youtu.be/dQw4w9WgXcQ"
+          "link": "https://youtu.be/Bxw9e-_XPEk?si=qqHXM9RGq9TtJKSC"
         },
         {
           "id": "med-3",
@@ -74,7 +74,7 @@
           "categories": ["Dech", "Mindfulness"],
           "picture_id": "pic-med-3",
           "date": "2024-08-03",
-          "link": "https://youtu.be/dQw4w9WgXcQ"
+          "link": "https://youtu.be/FnxAKX5XZhY?si=MrPSPbhTvdRoEV10"
         }
       ]
     },
@@ -87,9 +87,9 @@
       "items": [
         {
           "id": "workout-1",
-          "title": "8 minut s Kattlebellem",
-          "length": "5 min",
-          "level": "Střed",
+          "title": "Cvičení s Kattlebellem",
+          "length": "3 min",
+          "level": "Střední",
           "categories": ["Kettlebell", "Energie"],
           "picture_id": "pic-workout-1",
           "date": "2024-11-20",
@@ -97,33 +97,33 @@
         },
         {
           "id": "workout-2",
-          "title": "Core restart bez pomůcek 5",
-          "length": "14 min",
-          "level": "Střed",
+          "title": "Core restart bez pomůcek",
+          "length": "4 min",
+          "level": "Střední",
           "categories": ["Core", "Bez pomůcek"],
           "picture_id": "pic-workout-2",
           "date": "2024-10-02",
-          "link": "https://youtu.be/dQw4w9WgXcQ"
+          "link": "https://youtu.be/SEbbeh3Zkck?si=oOJNjiag5hVzNJ9U"
         },
         {
           "id": "workout-3",
           "title": "Kattlebell cvičení pro začátečníky",
-          "length": "4 min",
+          "length": "16 min",
           "level": "Začátečník",
           "categories": ["Kettlebell", "Technika"],
           "picture_id": "pic-workout-3",
           "date": "2024-08-22",
-          "link": "https://youtu.be/MN3jHgHS5uA"
+          "link": "https://youtu.be/hna08nPgCnM?si=Nzr7i2FSMwZfTrRr"
         },
         {
           "id": "workout-4",
-          "title": "Cvičení Horstand pro začátečníky",
-          "length": "2 min",
+          "title": "Cvičení s Kattlebelem rovnováha",
+          "length": "4 min",
           "level": "Začátečník",
-          "categories": ["Rovnováha", "Krátké"],
+          "categories": ["Kettlebell", "Krátké"],
           "picture_id": "pic-workout-4",
           "date": "2023-12-05",
-          "link": "https://youtu.be/2cTzaEBI_wY"
+          "link": "https://youtu.be/MN3jHgHS5uA"
         }
       ]
     },
@@ -136,13 +136,13 @@
       "items": [
         {
           "id": "yoga-1",
-          "title": "Jemná ranní hatha",
-          "length": "20 min",
+          "title": "Pozdrav Slunci a dechové techniky",
+          "length": "23 min",
           "level": "Začátečník",
-          "categories": ["Ráno", "Hatha"],
+          "categories": ["Dechové cvičení", "Pozdrav Slunci"],
           "picture_id": "pic-yoga-1",
           "date": "2024-12-05",
-          "link": "https://youtu.be/dQw4w9WgXcQ"
+          "link": "https://youtu.be/kkRGP-kePWc?si=dIsYAzQQZGv6iH53"
         },
         {
           "id": "yoga-2",
@@ -152,17 +152,17 @@
           "categories": ["Energie", "Power yoga"],
           "picture_id": "pic-yoga-2",
           "date": "2024-10-15",
-          "link": "https://youtu.be/dQw4w9WgXcQ"
+          "link": "https://youtu.be/J1uqpe-H6Kw?si=c_aQgAnp9vxiTQDB"
         },
         {
           "id": "yoga-3",
-          "title": "Restorativní večerní praxe",
+          "title": "Síla centra těla a paží",
           "length": "16 min",
           "level": "Začátečník",
-          "categories": ["Večer", "Restorativní"],
+          "categories": ["Core", "Paže"],
           "picture_id": "pic-yoga-3",
           "date": "2024-08-28",
-          "link": "https://youtu.be/dQw4w9WgXcQ"
+          "link": "https://youtu.be/kH1UmsnYMzc?si=0CL2HaYRu4IJS6QH"
         }
       ]
     }
