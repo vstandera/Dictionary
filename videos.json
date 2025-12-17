@@ -1,40 +1,40 @@
 {
     "sections": [
     {
-      "id": "try",
-      "label": "Zkouška",
+      "id": "favorite",
+      "label": "Oblíbená",
       "icon": "✨",
       "accent": "#ffc857",
-      "description": "Krátká ochutnávka pro první zapnutí.",
+      "description": "Nejoblíbenější rychlé meditace a cvičení na jedno klepnutí.",
       "items": [
         {
           "id": "try-1",
-          "title": "Windows 11 zrychlení",
-          "length": "10 min",
+          "title": "Ranní mindful start",
+          "length": "8 min",
           "level": "Začátečník",
-          "categories": ["Windows", "Optimalizace"],
+          "categories": ["Dech", "Ráno"],
           "picture_id": "pic-try-1",
-          "date": "2024-11-12",
+          "date": "2024-12-18",
           "link": "https://youtu.be/4S8MqFG4xYU"
         },
         {
           "id": "try-2",
-          "title": "MacOS zrychlení",
+          "title": "Expresní protažení po práci",
           "length": "10 min",
-          "level": "Začátečník",
-          "categories": ["macOS", "Optimalizace"],
+          "level": "Střed",
+          "categories": ["Celé tělo", "Bez pomůcek"],
           "picture_id": "pic-try-2",
-          "date": "2024-11-12",
+          "date": "2024-11-30",
           "link": "https://youtu.be/DUARWLcF9Os"
         },
         {
           "id": "try-3",
-          "title": "Asistivní přístup iPad",
-          "length": "10 min",
+          "title": "Krátká meditace kdykoli",
+          "length": "6 min",
           "level": "Začátečník",
-          "categories": ["iPad", "Přístupnost"],
+          "categories": ["Mindfulness", "Pauza"],
           "picture_id": "pic-try-3",
-          "date": "2024-11-12",
+          "date": "2024-11-10",
           "link": "https://youtu.be/r0V34cgz5Dk"
         }
       ]
