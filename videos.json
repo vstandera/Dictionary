@@ -12,6 +12,8 @@
           "title": "Windows 11 zrychlení",
           "length": "10 min",
           "level": "Začátečník",
+          "categories": ["Windows", "Optimalizace"],
+          "picture_id": "pic-try-1",
           "date": "2024-11-12",
           "link": "https://youtu.be/4S8MqFG4xYU"
         },
@@ -20,6 +22,8 @@
           "title": "MacOS zrychlení",
           "length": "10 min",
           "level": "Začátečník",
+          "categories": ["macOS", "Optimalizace"],
+          "picture_id": "pic-try-2",
           "date": "2024-11-12",
           "link": "https://youtu.be/DUARWLcF9Os"
         },
@@ -28,16 +32,10 @@
           "title": "Asistivní přístup iPad",
           "length": "10 min",
           "level": "Začátečník",
+          "categories": ["iPad", "Přístupnost"],
+          "picture_id": "pic-try-3",
           "date": "2024-11-12",
           "link": "https://youtu.be/r0V34cgz5Dk"
-        },
-  	{
-          "id": "try-4",
-          "title": "Asistovaný přístup",
-          "length": "10 min",
-          "level": "Začátečník",
-          "date": "2025-11-12",
-          "link": "https://youtu.be/0DZze_P3bjY"
         }
       ]
     },
@@ -52,7 +50,9 @@
           "id": "med-1",
           "title": "Hluboké uvolnění před spaním",
           "length": "15 min",
-          "level": "Středně pokročilí",
+          "level": "Střed",
+          "categories": ["Spánek", "Relax"],
+          "picture_id": "pic-med-1",
           "date": "2024-12-01",
           "link": "https://youtu.be/dQw4w9WgXcQ"
         },
@@ -61,6 +61,8 @@
           "title": "Skenování těla a uvolnění napětí",
           "length": "18 min",
           "level": "Začátečník",
+          "categories": ["Tělo", "Uvolnění"],
+          "picture_id": "pic-med-2",
           "date": "2024-10-10",
           "link": "https://youtu.be/dQw4w9WgXcQ"
         },
@@ -69,6 +71,8 @@
           "title": "Všímavost k dechu",
           "length": "12 min",
           "level": "Začátečník",
+          "categories": ["Dech", "Mindfulness"],
+          "picture_id": "pic-med-3",
           "date": "2024-08-03",
           "link": "https://youtu.be/dQw4w9WgXcQ"
         }
@@ -85,15 +89,19 @@
           "id": "workout-1",
           "title": "8 minut s Kattlebellem",
           "length": "5 min",
-          "level": "Středně pokročilí",
+          "level": "Střed",
+          "categories": ["Kettlebell", "Energie"],
+          "picture_id": "pic-workout-1",
           "date": "2024-11-20",
           "link": "https://youtu.be/IgWqBi3huh0"
         },
         {
           "id": "workout-2",
-          "title": "Core restart bez pomůcek 8",
+          "title": "Core restart bez pomůcek 5",
           "length": "14 min",
-          "level": "Středně pokročilí",
+          "level": "Střed",
+          "categories": ["Core", "Bez pomůcek"],
+          "picture_id": "pic-workout-2",
           "date": "2024-10-02",
           "link": "https://youtu.be/dQw4w9WgXcQ"
         },
@@ -102,32 +110,20 @@
           "title": "Kattlebell cvičení pro začátečníky",
           "length": "4 min",
           "level": "Začátečník",
+          "categories": ["Kettlebell", "Technika"],
+          "picture_id": "pic-workout-3",
           "date": "2024-08-22",
           "link": "https://youtu.be/MN3jHgHS5uA"
         },
         {
           "id": "workout-4",
-          "title": "Cvičení Horstand pro začátečníky2",
+          "title": "Cvičení Horstand pro začátečníky",
           "length": "2 min",
           "level": "Začátečník",
+          "categories": ["Rovnováha", "Krátké"],
+          "picture_id": "pic-workout-4",
           "date": "2023-12-05",
           "link": "https://youtu.be/2cTzaEBI_wY"
-        },
-  	{
-          "id": "workout-5",
-          "title": "Nove cviceni",
-          "length": "3 min",
-          "level": "Začátečník",
-          "date": "2023-12-05",
-          "link": "https://youtu.be/2cTzaEBI_wY"
-        },
-  	{
-          "id": "workout-6",
-          "title": "Vyzva v prkně",
-          "length": "5 min",
-          "level": "Začátečník",
-          "date": "2025-12-06",
-          "link": "https://youtu.be/AlrCFw9XYoM"
         }
       ]
     },
@@ -143,6 +139,8 @@
           "title": "Jemná ranní hatha",
           "length": "20 min",
           "level": "Začátečník",
+          "categories": ["Ráno", "Hatha"],
+          "picture_id": "pic-yoga-1",
           "date": "2024-12-05",
           "link": "https://youtu.be/dQw4w9WgXcQ"
         },
@@ -150,7 +148,9 @@
           "id": "yoga-2",
           "title": "Power yoga na povzbuzení",
           "length": "18 min",
-          "level": "Středně pokročilí",
+          "level": "Střed",
+          "categories": ["Energie", "Power yoga"],
+          "picture_id": "pic-yoga-2",
           "date": "2024-10-15",
           "link": "https://youtu.be/dQw4w9WgXcQ"
         },
@@ -158,7 +158,9 @@
           "id": "yoga-3",
           "title": "Restorativní večerní praxe",
           "length": "16 min",
-          "level": "Lehké cvičení",
+          "level": "Začátečník",
+          "categories": ["Večer", "Restorativní"],
+          "picture_id": "pic-yoga-3",
           "date": "2024-08-28",
           "link": "https://youtu.be/dQw4w9WgXcQ"
         }
